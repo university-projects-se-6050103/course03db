@@ -22,7 +22,7 @@ public class Main {
         stmt.execute("LOAD DATA INPATH 'hdfs:///user/cloudera/data/scores.csv' OVERWRITE INTO TABLE scores");
 
         stmt.execute("drop table if exists students");
-        stmt.execute("CREATE TABLE IF NOT EXISTS students( id int, full_name varchar(250), group varchar(10), study_year int ) row format delimited fields terminated by \",\"");
+        stmt.execute("CREATE TABLE IF NOT EXISTS students( id int, group varchar(10), full_name varchar(250), avg_score double ) row format delimited fields terminated by \",\"");
         stmt.execute("LOAD DATA INPATH 'hdfs:///user/cloudera/data/students.csv' OVERWRITE INTO TABLE students");
 
         stmt.execute("drop table if exists subjects");
