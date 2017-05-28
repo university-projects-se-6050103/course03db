@@ -32,9 +32,26 @@ $ docker build -t hive-loader ./hive-loader
 $ docker run --rm hive-loader
 ```
 
+## Get Some Data
+
+```sql
+SELECT students.id AS student_id,
+         students.group AS student_group,
+         students.full_name AS full_name,
+         students.avg_score AS previous_avg_score,
+         average_test_scores.average AS current_avg_score
+FROM students
+JOIN
+  (SELECT student_id,
+         AVG(value) AS average
+  FROM scores
+  GROUP BY  student_id) average_test_scores
+    ON (students.id = average_test_scores.student_id)
+```
+
 ## Other
 
-Connect to Oracle DB with `jdbc:oracle:thin:@localhost:1521:xe`
+Connect to Oracle DB with `jdbc:oracle:thin:@localhost:1521:xe`. Username: `system`. Password: `oracle`.
 
 <details>
  <summary>... or run Hadoop independently</summary>
