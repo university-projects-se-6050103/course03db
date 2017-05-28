@@ -9,10 +9,11 @@ services:
     stdin_open: true
     ports:
       - 8888:8888 # Hue Web UI
-      - 10000:10000 # HiveServer2
-      - 9083:9083 # Hive Metastore
-      - 14000:14000 # HttpFS
-      - 50070:50070 # NameNode
+      - 10000:10000 # HiveServer2 (for Hive)
+      - 9083:9083 # Hive Metastore (for Hive)
+      - 14000:14000 # HttpFS (for webhdfs)
+      - 50070:50070 # NameNode (for webhdfs)
+      - 50075:50075 # DataNode (for uploads)
     entrypoint: /usr/bin/docker-quickstart
 
   oracle:
