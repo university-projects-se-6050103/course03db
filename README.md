@@ -19,9 +19,9 @@ This will start Hadoop + Oracle DB.
 $ docker-composer up -d
 ```
 
-Go to [Hue Web UI](http://localhost:8888/) to explore. Username: `cloudera`. Password: `cloudera`
+* [Hue Web UI](http://localhost:8888/) Username: `cloudera`. Password: `cloudera`
 
-Go to [Oracle Apex Web UI](http://localhost:8080/) to explore. Username: `ADMIN`. Password: `0Racle$`. Workspace: INTERNAL.
+* [Oracle Apex Web UI](http://localhost:8080/apex) Username: `ADMIN`. Password: `0Racle$`. Workspace: INTERNAL.
 
 Connect with `jdbc:oracle:thin:@localhost:1521:xe`
 
