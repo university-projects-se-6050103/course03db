@@ -34,3 +34,7 @@ $ docker run -d -p 8080:8080 -p 1521:1521 -v `pwd`/oracle:/u01/app/oracle sath89
 ```
 
 Go to [Oracle Apex Web UI](http://localhost:8080/) to explore. Username: `ADMIN`. Password: `0Racle$`. Workspace: INTERNAL
+
+## Useful Links
+
+* [Network Ports exposed by CDH 5](https://www.cloudera.com/documentation/enterprise/5-2-x/topics/cdh_ig_ports_cdh5.html)
