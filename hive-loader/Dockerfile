@@ -3,8 +3,8 @@ FROM gradle:3.5-jdk8
 USER root
 COPY . /app
 WORKDIR /app
-RUN gradle build
+RUN gradle fatJar
 
-WORKDIR /app/build/classes/main
+WORKDIR /app/build/libs
 
-ENTRYPOINT java Main
+ENTRYPOINT java -jar vlad-1.0-SNAPSHOT-all.jar
