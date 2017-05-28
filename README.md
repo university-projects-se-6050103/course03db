@@ -11,13 +11,21 @@
 * Implement at least 1 stored procedure in OracleDB to perform CRUD on 2 entities
 * Develop Windows Forms App for testing and demonstration of all the above-mentioned (using .NET DDL)
 
-## Hadoop
+## Run
+
+This will start Hadoop + Oracle DB.
+
+```sh
+$ docker-composer up -d
+```
+
+### Hadoop
 
 ```sh
 $ docker run --hostname=quickstart.cloudera --privileged=true -it -p 8888:8888 -p 10000:10000 -p 9083:9083 cloudera/quickstart /usr/bin/docker-quickstart
 ```
 
-## Oracle DB
+### Oracle DB
 
 ```sh
 $ docker run -d -p 8080:8080 -p 1521:1521 -v `pwd`/oracle:/u01/app/oracle sath89/oracle-12c
