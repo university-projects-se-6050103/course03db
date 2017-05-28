@@ -18,28 +18,34 @@ sourceSets {
 }
 
 jar {
-  manifest {
-    attributes(
-      'Main-Class': 'Main',
-    )
-  }
+    manifest {
+        attributes(
+                'Main-Class': 'Main',
+        )
+    }
 }
 
 
 task fatJar(type: Jar) {
     zip64 true
     manifest.from jar.manifest
-      classifier = 'all'
-      from {
+    classifier = 'all'
+    from {
         configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) }
-      } {
-            exclude "META-INF/*.SF"
-            exclude "META-INF/*.DSA"
-            exclude "META-INF/*.RSA"
-      }
-      with jar
+    } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+    with jar
 }
 
 dependencies {
-    compile 'org.apache.hive:hive-jdbc:2.1.1'
+    compile "org.apache.hive:hive-jdbc:0.13.1"
+    compile "org.apache.thrift:libthrift:0.9.0"
+    compile "org.apache.thrift:libfb303:0.9.0"
+    compile "org.apache.hadoop:hadoop-core:1.2.1"
+    compile "org.apache.hadoop:hadoop-common:2.5.0"
+    compile "org.apache.hive:hive-exec:0.13.1"
+    compile "org.apache.hadoop:hadoop-hdfs:2.5.0"
 }
