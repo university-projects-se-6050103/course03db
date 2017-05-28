@@ -15,6 +15,11 @@ services:
       - 50070:50070 # NameNode (for webhdfs)
       - 8020:8020 # NameNode (for uploads)
       - 50075:50075 # DataNode (for uploads)
+      - 8021:8021 # JobTracker
+      - 50030:50030 # JobTracker
+      - 9290:9290 # JobTracker (Thrift Plugin)
+      - 10020:10020 # JobHistory Server (int)
+      - 19888:19888 # JobHistory Server (ext)
     entrypoint: /usr/bin/docker-quickstart
 
   oracle:
