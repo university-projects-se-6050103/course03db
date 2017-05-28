@@ -13,6 +13,7 @@ services:
       - 9083:9083 # Hive Metastore (for Hive)
       - 14000:14000 # HttpFS (for webhdfs)
       - 50070:50070 # NameNode (for webhdfs)
+      - 8020:8020 # NameNode (for uploads)
       - 50075:50075 # DataNode (for uploads)
     entrypoint: /usr/bin/docker-quickstart
 
