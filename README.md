@@ -23,6 +23,14 @@ $ docker-composer up -d
 
 * [Oracle Apex Web UI](http://localhost:8080/apex) Username: `ADMIN`. Password: `0Racle$`. Workspace: INTERNAL.
 
+## Load Data
+
+This will upload files from `data/` folder to HDFS.
+
+```sh
+$ ./upload-mock-data.sh
+```
+
 Connect with `jdbc:oracle:thin:@localhost:1521:xe`
 
 <details>
