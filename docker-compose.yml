@@ -8,13 +8,13 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - 8888:8888
-      - 10000:10000
-      - 9083:9083
+      - 8888:8888 # Hue Web UI
+      - 10000:10000 # HiveServer2
+      - 9083:9083 # Hive Metastore
     entrypoint: /usr/bin/docker-quickstart
 
   oracle:
     image: sath89/oracle-12c
     ports:
-      - 1521:1521
-      - 8080:8080
+      - 1521:1521 # Oracle DB
+      - 8080:8080 # Apex Web UI
