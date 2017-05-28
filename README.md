@@ -27,31 +27,27 @@ Connect with `jdbc:oracle:thin:@localhost:1521:xe`
 
 <details>
  <summary>... or run Hadoop independently</summary>
-
-    ```sh
-    $ docker run \
-        --hostname=quickstart.cloudera \
-        --privileged=true -it \
-        -p 8888:8888 \
-        -p 10000:10000 \
-        -p 9083:9083 \
-        cloudera/quickstart \
-        /usr/bin/docker-quickstart
-    ```
-
+```sh
+$ docker run \
+    --hostname=quickstart.cloudera \
+    --privileged=true -it \
+    -p 8888:8888 \
+    -p 10000:10000 \
+    -p 9083:9083 \
+    cloudera/quickstart \
+    /usr/bin/docker-quickstart
+```
 </details>
 
 <details>
  <summary>... or run Oracle DB independently</summary>
-
-    ```sh
-    $ docker run -d \
-        -p 8080:8080 \
-        -p 1521:1521 \
-        -v `pwd`/oracle:/u01/app/oracle \
-        sath89/oracle-12c
-    ```
-
+```sh
+$ docker run -d \
+    -p 8080:8080 \
+    -p 1521:1521 \
+    -v `pwd`/oracle:/u01/app/oracle \
+    sath89/oracle-12c
+```
 </details>
 
 
