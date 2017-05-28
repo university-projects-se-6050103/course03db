@@ -14,7 +14,7 @@ public class Main {
             System.exit(1);
         }
 
-        Connection con = DriverManager.getConnection("jdbc:hive2://localhost:10000/default", "hive", "cloudera");
+        Connection con = DriverManager.getConnection("jdbc:hive2://172.17.0.1:10000/default", "hive", "cloudera");
         Statement stmt = con.createStatement();
 
         stmt.execute("drop table if exists scores");

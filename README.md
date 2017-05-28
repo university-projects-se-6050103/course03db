@@ -25,13 +25,16 @@ $ docker-composer up -d
 
 ## Load Data
 
-This will upload files from `data/` folder to HDFS.
+This will upload `.csv` files with initial seed data to HDFS. Then it will create tables and import data into them.
 
 ```sh
-$ ./upload-mock-data.sh
+$ docker build -t hive-loader ./hive-loader
+$ docker run --rm hive-loader
 ```
 
-Connect with `jdbc:oracle:thin:@localhost:1521:xe`
+## Other
+
+Connect to Oracle DB with `jdbc:oracle:thin:@localhost:1521:xe`
 
 <details>
  <summary>... or run Hadoop independently</summary>
