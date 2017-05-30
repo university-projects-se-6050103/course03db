@@ -16,7 +16,7 @@
 This will start Hadoop + Oracle DB.
 
 ```sh
-$ docker-composer up -d
+$ docker-compose up -d
 ```
 
 * [Hue Web UI](http://localhost:8888/) Username: `cloudera`. Password: `cloudera`
